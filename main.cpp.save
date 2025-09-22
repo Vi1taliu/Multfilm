@@ -1,18 +1,84 @@
 #include "TXLib.h"
 
-void drawHangar()
+void drawSky()
 {
-    txSetColor (RGB ( 0, 0, 0), 
-
-    txSetFillColor (TX_LIGHTBLUE);
+    //небо
+    txSetColor (RGB(45, 74, 213));
+    txSetFillColor (RGB(45, 74, 213));
     txRectangle (0, 0, 800, 600);
 }
 
+void drawZenlya()
+{
+    //земля
+    txSetColor (RGB(72, 148, 27));
+    txSetFillColor (RGB(72, 148, 27));
+    txRectangle (0, 405, 800, 600);
+}
+
+void drawFranceTank(int x)
+{
+    txSetColor (TX_BLACK, 10);
+    txSetFillColor (RGB(0, 15, 153));
+    txEllipse (x+33-11, 451, x+290-11, 419);
+    txSetColor (TX_BLACK, 3);
+    txSetFillColor (RGB(0, 15, 153));
+    POINT francetank[5] = {{x+11-11, 439}, {x+76-11, 333}, {x+306-11, 334}, {x+350-11, 389}, {x+292-11, 443}};
+    txPolygon (francetank, 5);
+    txSetColor (TX_BLACK, 3);
+    txSetFillColor (RGB(0, 15, 153));
+    txRectangle (x+303-11, 348, x+426-11, 365);
+
+}
+
+void drawGermanTank()
+{
+    txSetColor (RGB(0, 15, 153));
+    txSetFillColor (RGB(0, 15, 153));
+}   
+
 int main()
-    {
+{
     txCreateWindow (800, 600);
 
-    txTextCursor (false);
-    return 0;
+int xFranceTank = 100;
+
+    while (xFranceTank<1000)
+    {
+        txBegin();
+        drawSky();
+        drawZenlya();
+        drawFranceTank(xFranceTank);
+        txEnd();
+
+        xFranceTank += 1;
     }
+
+    if (xFranceTank == 1000)
+    {
+        int xFranceTank = 0;
+
+        while (xFranceTank<1001)
+    {
+        txBegin();
+        drawSky();
+        drawZenlya();
+        drawFranceTank(xFranceTank);
+        txEnd();
+
+        xFranceTank += 1;
+    }
+    
+    }
+    
+    if (xFranceTank == 1001)
+    {
+    
+    } 
+
+txTextCursor (false);
+return 0;
+}
+
+
 
