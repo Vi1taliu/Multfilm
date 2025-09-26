@@ -18,24 +18,26 @@ void drawZenlya()
 
 void drawFranceTank(int x)
 {
-    txSetColor (TX_BLACK, 10);
+    txSetColor (TX_BLACK, 3);
+    txSetFillColor (RGB(0, 15, 153));
+    txRectangle (x+303-11, 348, x+426-11, 365);
+    txSetColor (TX_BLACK, 16);
     txSetFillColor (RGB(0, 15, 153));
     txEllipse (x+33-11, 451, x+290-11, 419);
     txSetColor (TX_BLACK, 3);
     txSetFillColor (RGB(0, 15, 153));
     POINT francetank[5] = {{x+11-11, 439}, {x+76-11, 333}, {x+306-11, 334}, {x+350-11, 389}, {x+292-11, 443}};
     txPolygon (francetank, 5);
-    txSetColor (TX_BLACK, 3);
-    txSetFillColor (RGB(0, 15, 153));
-    txRectangle (x+303-11, 348, x+426-11, 365);
+
 
 }
 
 void drawGermanTank()
 {
-    txSetColor (RGB(0, 15, 153));
-    txSetFillColor (RGB(0, 15, 153));
-}   
+    txSetColor (TX_BLACK, 3);
+    txSetFillColor (RGB(104, 104, 104));
+    txRectangle (489, 325, 790, 443);
+}
 
 int main()
 {
@@ -58,27 +60,25 @@ int xFranceTank = 100;
     {
         int xFranceTank = 0;
 
-        while (xFranceTank<1001)
+        while (xFranceTank<1010)
     {
         txBegin();
         drawSky();
         drawZenlya();
         drawFranceTank(xFranceTank);
+        drawGermanTank();
         txEnd();
 
-        xFranceTank += 1;
+        //xFranceTank += 1;
     }
-    
+
     }
-    
-    if (xFranceTank == 1001)
-    {
-    
-    } 
 
 txTextCursor (false);
 return 0;
 }
+
+
 
 
 
