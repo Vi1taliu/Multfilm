@@ -8,6 +8,13 @@ void drawSky()
     txRectangle (0, 0, 800, 600);
 }
 
+void drawSkyV()
+{
+    txSetColor (RGB(253, 187, 98));
+    txSetFillColor (RGB(253, 187, 98));
+    txRectangle (0, 0, 800, 600);
+}
+
 void drawZenlya()
 {
     //земля
@@ -32,18 +39,26 @@ void drawFranceTank(int x)
 
 }
 
-void drawGermanTank()
+void drawSun(int x)
 {
-    txSetColor (TX_BLACK, 3);
-    txSetFillColor (RGB(104, 104, 104));
-    txRectangle (489, 325, 790, 443);
+    txSetColor (RGB(238, 202, 0));
+    txSetFillColor (RGB(238, 202, 0));
+    txCircle(x, 110, 50);
+}
+
+void drawSunV(int x)
+{
+    txSetColor (RGB(245, 104, 10));
+    txSetFillColor (RGB(245, 104, 10));
+    txCircle(x, 140, 50);
 }
 
 int main()
 {
-    txCreateWindow (800, 600);
+txCreateWindow (800, 600);
 
 int xFranceTank = 100;
+int xSun = 100;
 
     while (xFranceTank<1000)
     {
@@ -51,25 +66,29 @@ int xFranceTank = 100;
         drawSky();
         drawZenlya();
         drawFranceTank(xFranceTank);
+        drawSun(xSun);
         txEnd();
 
         xFranceTank += 1;
+        xSun += 2;
     }
 
     if (xFranceTank == 1000)
     {
         int xFranceTank = 0;
+        int xSunV = 0;
 
         while (xFranceTank<1010)
     {
         txBegin();
-        drawSky();
+        drawSkyV();
         drawZenlya();
         drawFranceTank(xFranceTank);
-        drawGermanTank();
+        drawSunV(xSunV);
         txEnd();
 
-        //xFranceTank += 1;
+        xFranceTank += 1;
+        xSunV += 2;
     }
 
     }
@@ -77,6 +96,7 @@ int xFranceTank = 100;
 txTextCursor (false);
 return 0;
 }
+
 
 
 
