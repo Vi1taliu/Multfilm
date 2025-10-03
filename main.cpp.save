@@ -15,6 +15,28 @@ void drawSkyV()
     txRectangle (0, 0, 800, 600);
 }
 
+void drawAngar()
+{
+    txSetColor (RGB(100, 100, 100));
+    txSetFillColor (RGB(100, 100, 100));
+    txRectangle (495, 169, 800, 490);
+
+    txSetColor (RGB(80, 80, 80));
+    txSetFillColor (RGB(80, 80, 80));
+    txRectangle (495, 306, 512, 490);
+
+    txSetColor (RGB(0, 119, 227));
+    txSetFillColor (RGB(0, 119, 227));
+    txRectangle (576, 244, 766, 273);
+}
+
+void drawAngarV()
+{
+    txSetColor (RGB(100, 100, 100));
+    txSetFillColor (RGB(100, 100, 100));
+    txRectangle (0, 0, 800, 600);
+}
+
 void drawZenlya()
 {
     //земля
@@ -53,6 +75,20 @@ void drawSunV(int x)
     txCircle(x, 140, 50);
 }
 
+void drawWindow()
+{
+    txSetColor (TX_BLACK, 3);
+    txSetFillColor (RGB(253, 187, 98));
+    txRectangle (163, 113, 633, 168);
+}
+
+void drawFloor()
+{
+    txSetColor (RGB(75, 75, 75));
+    txSetFillColor (RGB(75, 75, 75));
+    txRectangle (0, 458, 800, 600);
+}
+
 int main()
 {
 txCreateWindow (800, 600);
@@ -60,7 +96,7 @@ txCreateWindow (800, 600);
 int xFranceTank = 100;
 int xSun = 100;
 
-    while (xFranceTank<1000)
+    while (xFranceTank<900)
     {
         txBegin();
         drawSky();
@@ -73,22 +109,36 @@ int xSun = 100;
         xSun += 2;
     }
 
-    if (xFranceTank == 1000)
+    if (xFranceTank == 900)
     {
         int xFranceTank = 0;
         int xSunV = 0;
 
-        while (xFranceTank<1010)
+        while (xFranceTank<910)
     {
         txBegin();
         drawSkyV();
         drawZenlya();
         drawFranceTank(xFranceTank);
         drawSunV(xSunV);
+        drawAngar();
         txEnd();
 
         xFranceTank += 1;
         xSunV += 2;
+    }
+    if (xFranceTank == 910)
+    {
+        int xFranceTank = 200;
+        int xSunV = 0;
+
+        txBegin();
+        drawAngarV();
+        drawFranceTank(xFranceTank);
+        drawWindow();
+        drawFloor();
+        txEnd();
+
     }
 
     }
@@ -96,6 +146,7 @@ int xSun = 100;
 txTextCursor (false);
 return 0;
 }
+
 
 
 
