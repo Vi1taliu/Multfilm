@@ -89,12 +89,28 @@ void drawFloor()
     txRectangle (0, 458, 800, 600);
 }
 
+void drawClaw(int x)
+{
+    txSetColor (TX_BLACK);
+    txSetFillColor (TX_BLACK);
+    txRectangle (x+660-660, 340, 800, 371);
+}
+
+void drawTrack(int x)
+{
+    txSetColor (TX_BROWN);
+    txSetFillColor (TX_BROWN);
+    txRectangle (0, 433, x+132-132, 473);
+}
+
+
 int main()
 {
 txCreateWindow (800, 600);
 
 int xFranceTank = 100;
 int xSun = 100;
+int xTrack = 100;
 
     while (xFranceTank<900)
     {
@@ -103,10 +119,12 @@ int xSun = 100;
         drawZenlya();
         drawFranceTank(xFranceTank);
         drawSun(xSun);
+        drawTrack(xTrack);
         txEnd();
 
         xFranceTank += 1;
         xSun += 2;
+        xTrack += 1;
     }
 
     if (xFranceTank == 900)
@@ -122,22 +140,35 @@ int xSun = 100;
         drawFranceTank(xFranceTank);
         drawSunV(xSunV);
         drawAngar();
+        drawTrack(xTrack);
         txEnd();
 
         xFranceTank += 1;
         xSunV += 2;
+        xTrack += 1;
     }
     if (xFranceTank == 910)
     {
         int xFranceTank = 200;
         int xSunV = 0;
+        int xClaw = 660;
 
+        while (xClaw > 615)
+        {
         txBegin();
         drawAngarV();
         drawFranceTank(xFranceTank);
         drawWindow();
         drawFloor();
+        drawClaw(xClaw);
         txEnd();
+
+        xClaw -= 1;
+        }
+        if (xClaw == 615)
+        {
+        xClaw += 1;
+        }
 
     }
 
@@ -146,6 +177,7 @@ int xSun = 100;
 txTextCursor (false);
 return 0;
 }
+
 
 
 
