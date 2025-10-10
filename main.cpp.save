@@ -55,7 +55,7 @@ void drawFranceTank(int x)
     txEllipse (x+33-11, 451, x+290-11, 419);
     txSetColor (TX_BLACK, 3);
     txSetFillColor (RGB(0, 15, 153));
-    POINT francetank[5] = {{x+11-11, 439}, {x+76-11, 333}, {x+306-11, 334}, {x+350-11, 389}, {x+292-11, 443}};
+    POINT francetank[5] = {{x+11-11, 439}, {x+76-11, 333}, {x+306-11, 333}, {x+350-11, 389}, {x+292-11, 443}};
     txPolygon (francetank, 5);
 
 
@@ -89,20 +89,26 @@ void drawFloor()
     txRectangle (0, 458, 800, 600);
 }
 
-void drawClaw(int x)
+void drawClaw(int y)
 {
     txSetColor (TX_BLACK);
     txSetFillColor (TX_BLACK);
-    txRectangle (x+660-660, 340, 800, 371);
+    txRectangle (427, 0, 465, y+16-16);
+}
+
+void drawClaww(int y)
+{
+    txSetColor (TX_BLACK);
+    txSetFillColor (TX_BLACK);
+    txRectangle (307, 0, 345, y+16-16);
 }
 
 void drawTrack(int x)
 {
-    txSetColor (TX_BROWN);
-    txSetFillColor (TX_BROWN);
+    txSetColor (RGB(15, 121, 0));
+    txSetFillColor (RGB(15, 121, 0));
     txRectangle (0, 433, x+132-132, 473);
 }
-
 
 int main()
 {
@@ -131,6 +137,7 @@ int xTrack = 100;
     {
         int xFranceTank = 0;
         int xSunV = 0;
+        int xTrack = 0;
 
         while (xFranceTank<910)
     {
@@ -139,8 +146,8 @@ int xTrack = 100;
         drawZenlya();
         drawFranceTank(xFranceTank);
         drawSunV(xSunV);
-        drawAngar();
         drawTrack(xTrack);
+        drawAngar();
         txEnd();
 
         xFranceTank += 1;
@@ -151,23 +158,22 @@ int xTrack = 100;
     {
         int xFranceTank = 200;
         int xSunV = 0;
-        int xClaw = 660;
+        int yClaw = 0;
+        int yClaww = 0;
 
-        while (xClaw > 615)
+        while (yClaw < 340)
         {
         txBegin();
         drawAngarV();
         drawFranceTank(xFranceTank);
         drawWindow();
         drawFloor();
-        drawClaw(xClaw);
+        drawClaw(yClaw);
+        drawClaww(yClaww);
         txEnd();
 
-        xClaw -= 1;
-        }
-        if (xClaw == 615)
-        {
-        xClaw += 1;
+        yClaw += 1;
+        yClaww += 1;
         }
 
     }
@@ -177,6 +183,8 @@ int xTrack = 100;
 txTextCursor (false);
 return 0;
 }
+
+
 
 
 
