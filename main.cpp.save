@@ -2,187 +2,239 @@
 
 void drawSky()
 {
-    //небо
-    txSetColor (RGB(45, 74, 213));
-    txSetFillColor (RGB(45, 74, 213));
-    txRectangle (0, 0, 800, 600);
+    // небо
+    txSetColor(RGB(45, 74, 213));
+    txSetFillColor(RGB(45, 74, 213));
+    txRectangle(0, 0, 800, 600);
 }
 
 void drawSkyV()
 {
-    txSetColor (RGB(253, 187, 98));
-    txSetFillColor (RGB(253, 187, 98));
-    txRectangle (0, 0, 800, 600);
+    txSetColor(RGB(253, 187, 98));
+    txSetFillColor(RGB(253, 187, 98));
+    txRectangle(0, 0, 800, 600);
 }
 
 void drawAngar()
 {
-    txSetColor (RGB(100, 100, 100));
-    txSetFillColor (RGB(100, 100, 100));
-    txRectangle (495, 169, 800, 490);
+    txSetColor(RGB(100, 100, 100));
+    txSetFillColor(RGB(100, 100, 100));
+    txRectangle(495, 169, 800, 490);
 
-    txSetColor (RGB(80, 80, 80));
-    txSetFillColor (RGB(80, 80, 80));
-    txRectangle (495, 306, 512, 490);
+    txSetColor(RGB(80, 80, 80));
+    txSetFillColor(RGB(80, 80, 80));
+    txRectangle(495, 306, 512, 490);
 
-    txSetColor (RGB(0, 119, 227));
-    txSetFillColor (RGB(0, 119, 227));
-    txRectangle (576, 244, 766, 273);
+    txSetColor(RGB(0, 119, 227));
+    txSetFillColor(RGB(0, 119, 227));
+    txRectangle(576, 244, 766, 273);
 }
 
 void drawAngarV()
 {
-    txSetColor (RGB(100, 100, 100));
-    txSetFillColor (RGB(100, 100, 100));
-    txRectangle (0, 0, 800, 600);
+    txSetColor(RGB(100, 100, 100));
+    txSetFillColor(RGB(100, 100, 100));
+    txRectangle(0, 0, 800, 600);
 }
 
 void drawZenlya()
 {
-    //земля
-    txSetColor (RGB(72, 148, 27));
-    txSetFillColor (RGB(72, 148, 27));
-    txRectangle (0, 405, 800, 600);
+    // земля
+    txSetColor(RGB(72, 148, 27));
+    txSetFillColor(RGB(72, 148, 27));
+    txRectangle(0, 405, 800, 600);
 }
 
 void drawFranceTank(int x)
 {
-    txSetColor (TX_BLACK, 3);
-    txSetFillColor (RGB(0, 15, 153));
-    txRectangle (x+303-11, 348, x+426-11, 365);
-    txSetColor (TX_BLACK, 16);
-    txSetFillColor (RGB(0, 15, 153));
-    txEllipse (x+33-11, 451, x+290-11, 419);
-    txSetColor (TX_BLACK, 3);
-    txSetFillColor (RGB(0, 15, 153));
+    txSetColor(TX_BLACK, 3);
+    txSetFillColor(RGB(0, 15, 153));
+    txRectangle(x+303-11, 348, x+426-11, 365);
+
+    txSetColor(TX_BLACK, 16);
+    txSetFillColor(RGB(0, 15, 153));
+    txEllipse(x+33-11, 451, x+290-11, 419);
+
+    txSetColor(TX_BLACK, 3);
+    txSetFillColor(RGB(0, 15, 153));
     POINT francetank[5] = {{x+11-11, 439}, {x+76-11, 333}, {x+306-11, 333}, {x+350-11, 389}, {x+292-11, 443}};
-    txPolygon (francetank, 5);
-
-
+    txPolygon(francetank, 5);
 }
 
 void drawSun(int x)
 {
-    txSetColor (RGB(238, 202, 0));
-    txSetFillColor (RGB(238, 202, 0));
+    txSetColor(RGB(238, 202, 0));
+    txSetFillColor(RGB(238, 202, 0));
     txCircle(x, 110, 50);
 }
 
 void drawSunV(int x)
 {
-    txSetColor (RGB(245, 104, 10));
-    txSetFillColor (RGB(245, 104, 10));
+    txSetColor(RGB(245, 104, 10));
+    txSetFillColor(RGB(245, 104, 10));
     txCircle(x, 140, 50);
 }
 
 void drawWindow()
 {
-    txSetColor (TX_BLACK, 3);
-    txSetFillColor (RGB(253, 187, 98));
-    txRectangle (163, 113, 633, 168);
+    txSetColor(TX_BLACK, 3);
+    txSetFillColor(RGB(253, 187, 98));
+    txRectangle(163, 113, 633, 168);
 }
 
 void drawFloor()
 {
-    txSetColor (RGB(75, 75, 75));
-    txSetFillColor (RGB(75, 75, 75));
-    txRectangle (0, 458, 800, 600);
+    txSetColor(RGB(75, 75, 75));
+    txSetFillColor(RGB(75, 75, 75));
+    txRectangle(0, 458, 800, 600);
 }
 
 void drawClaw(int y)
 {
-    txSetColor (TX_BLACK);
-    txSetFillColor (TX_BLACK);
-    txRectangle (427, 0, 465, y+16-16);
+    txSetColor(TX_BLACK);
+    txSetFillColor(TX_BLACK);
+    txRectangle(427, 0, 465, y);
 }
 
 void drawClaww(int y)
 {
-    txSetColor (TX_BLACK);
-    txSetFillColor (TX_BLACK);
-    txRectangle (307, 0, 345, y+16-16);
+    txSetColor(TX_BLACK);
+    txSetFillColor(TX_BLACK);
+    txRectangle(307, 0, 345, y);
 }
 
 void drawTrack(int x)
 {
-    txSetColor (RGB(15, 121, 0));
-    txSetFillColor (RGB(15, 121, 0));
-    txRectangle (0, 433, x+132-132, 473);
+    txSetColor(RGB(15, 121, 0));
+    txSetFillColor(RGB(15, 121, 0));
+    txRectangle(0, 433, x, 473);
+}
+
+void drawFranceTankV(int y)
+{
+    txSetColor(TX_BLACK, 3);
+    txSetFillColor(RGB(0, 15, 153));
+    txRectangle(503, y+348-439, 626, y+365-439);
+
+    txSetColor(TX_BLACK, 16);
+    txSetFillColor(RGB(0, 15, 153));
+    txEllipse(233, y+451-439, 490, y+419-439);
+
+    txSetColor(TX_BLACK, 3);
+    txSetFillColor(RGB(0, 15, 153));
+    POINT francetankv[5] = {{211, y+439-439}, {276, y+333-439}, {506, y+333-439}, {550, y+389-439}, {492, y+443-439}};
+    txPolygon(francetankv, 5);
 }
 
 int main()
 {
-txCreateWindow (800, 600);
+    txCreateWindow(800, 600);
 
-int xFranceTank = 100;
-int xSun = 100;
-int xTrack = 100;
+    int stage = 1;
 
-    while (xFranceTank<900)
+    int xFranceTank = 100;
+    int xSun = 100;
+    int xTrack = 100;
+    int xSunV = 0;
+    int yFranceTankV = 439;
+    int yClaw = 0;
+    int yClaww = 0;
+
+    while(true)
     {
-        txBegin();
-        drawSky();
-        drawZenlya();
-        drawFranceTank(xFranceTank);
-        drawSun(xSun);
-        drawTrack(xTrack);
-        txEnd();
-
-        xFranceTank += 1;
-        xSun += 2;
-        xTrack += 1;
-    }
-
-    if (xFranceTank == 900)
-    {
-        int xFranceTank = 0;
-        int xSunV = 0;
-        int xTrack = 0;
-
-        while (xFranceTank<910)
-    {
-        txBegin();
-        drawSkyV();
-        drawZenlya();
-        drawFranceTank(xFranceTank);
-        drawSunV(xSunV);
-        drawTrack(xTrack);
-        drawAngar();
-        txEnd();
-
-        xFranceTank += 1;
-        xSunV += 2;
-        xTrack += 1;
-    }
-    if (xFranceTank == 910)
-    {
-        int xFranceTank = 200;
-        int xSunV = 0;
-        int yClaw = 0;
-        int yClaww = 0;
-
-        while (yClaw < 340)
+        if(stage == 1)
         {
-        txBegin();
-        drawAngarV();
-        drawFranceTank(xFranceTank);
-        drawWindow();
-        drawFloor();
-        drawClaw(yClaw);
-        drawClaww(yClaww);
-        txEnd();
+            txBegin();
+            drawSky();
+            drawZenlya();
+            drawFranceTank(xFranceTank);
+            drawSun(xSun);
+            drawTrack(xTrack);
+            txEnd();
 
-        yClaw += 1;
-        yClaww += 1;
+            xFranceTank += 1;
+            xSun += 2;
+            xTrack += 1;
+
+            if (xFranceTank >= 810)
+            {
+                stage = 2;
+
+                xFranceTank = 0;
+                xSunV = 0;
+                xTrack = 0;
+            }
+        }
+        else if(stage == 2)
+        {
+            txBegin();
+            drawSkyV();
+            drawZenlya();
+            drawFranceTank(xFranceTank);
+            drawSunV(xSunV);
+            drawTrack(xTrack);
+            drawAngar();
+            txEnd();
+
+            xFranceTank += 1;
+            xSunV += 2;
+            xTrack += 1;
+
+            if (xFranceTank >= 820)
+            {
+                stage = 3;
+
+                yClaw = 0;
+                yClaww = 0;
+                yFranceTankV = 439;
+            }
+        }
+        else if(stage == 3)
+        {
+            txBegin();
+            drawAngarV();
+            drawFranceTankV(yFranceTankV);
+            drawWindow();
+            drawFloor();
+            drawClaw(yClaw);
+            drawClaww(yClaww);
+            txEnd();
+
+            yClaw += 1;
+            yClaww += 1;
+
+            if (yClaw >= 335)
+            {
+                stage = 4;
+                yClaw = 335;
+                yClaww = 335;
+            }
+        }
+        else if(stage == 4)
+        {
+            while (yClaw > -0)
+            {
+                txBegin();
+                drawAngarV();
+                drawWindow();
+                drawFranceTankV(yFranceTankV);
+                drawFloor();
+                drawClaw(yClaw);
+                drawClaww(yClaww);
+                txEnd();
+
+                yClaw -= 1;
+                yClaww -= 1;
+                yFranceTankV -= 1;
+            }
         }
 
     }
-
-    }
-
-txTextCursor (false);
-return 0;
+    txTextCursor(false);
+    return 0;
 }
+
+
 
 
 
